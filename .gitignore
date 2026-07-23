@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+out/qa_*.png
+out/preview_*.svg
+.DS_Store
+.venv/

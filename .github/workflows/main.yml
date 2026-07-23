@@ -1,0 +1,40 @@
+name: Generate neofetch profile
+
+on:
+  schedule:
+    - cron: "17 3 * * *"      # daily, keeps uptime + stats fresh
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Render SVGs
+        env:
+          GH_USERNAME: ${{ github.repository_owner }}
+          # METRICS_TOKEN = a PAT with 'repo' + 'read:user' for full lines-of-code.
+          # Falls back to the built-in token (public repos only) if unset.
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
+        run: python3 generate.py
+
+      - name: Commit updated art
+        run: |
+          git config user.name "Said Azaizah"
+          git config user.email "az.said2007@gmail.com"
+          git add out/dark_mode.svg out/light_mode.svg cache/loc_cache.json
+          git diff --quiet --cached || git commit -m "Refresh profile stats"
+          git push
