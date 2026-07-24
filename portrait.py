@@ -64,6 +64,24 @@ def _grade(rgb, mode):
     return _lerp(rgb, neon_map(lum), 0.5)
 
 
+# single-hue tints for monochrome character art (brightness carries the depth)
+MONO_BASE = {
+    "mono_cyan":  (0x8f, 0xe9, 0xff),
+    "mono_white": (0xe9, 0xf3, 0xff),
+    "mono_green": (0x6d, 0xff, 0xa8),
+    "mono_amber": (0xff, 0xcf, 0x6a),
+}
+
+
+def _pixcolor(rgb, mode):
+    """Color strategy for character art. mono_* = single hue scaled by brightness."""
+    if mode in ("truecolor", "neon", "duotone"):
+        return _grade(rgb, mode)
+    base = MONO_BASE.get(mode, MONO_BASE["mono_cyan"])
+    f = 0.26 + 0.74 * _lum(rgb)
+    return tuple(round(base[i] * f) for i in range(3))
+
+
 # panel background the portrait fades into (matches generate.py DARK panel)
 PANEL_BG = (0x0a, 0x06, 0x18)
 
@@ -152,10 +170,24 @@ def render_pixel(img, cols: int = 74, cell: int = 5, dither: bool = False,
 ASCII_RAMP = " .`:-_,^=;><+!rc*/z?sLTv)J7(|Fi{C}fI31tlu[neoZ5Yxjya]2ESwqkP6h9d4VpOGbUAKXHm8RD#$Bg0MNWQ%&@"
 
 
-def render_ascii(img, cols: int = 82, cw: int = 7, ch: int = 12,
-                 mode: str = "neon") -> tuple[str, int, int]:
+def _contrast(lum: float, gamma: float = 0.82, gain: float = 1.18) -> float:
+    """Push midtones so the face reads as distinct glyphs, not a smooth photo."""
+    v = (lum ** gamma - 0.5) * gain + 0.5
+    return max(0.0, min(1.0, v))
+
+
+def render_ascii(img, cols: int = 82, fs: float = 9.2, ls: float = 0.7,
+                 line_ratio: float = 1.16, mode: str = "mono_white") -> tuple[str, int, int]:
+    """Character-drawn face: legible monospace glyphs, airy spacing, monochrome tint.
+
+    Fewer/larger columns than a photo grid so each glyph reads as a character
+    (the whole point of ASCII art), while a contrast curve keeps facial detail.
+    """
+    cw = fs * 0.60 + ls          # horizontal advance per glyph (monospace + gap)
+    ch = fs * line_ratio         # line height (the extra gap gives the airy feel)
     rows = _rows(img, cols, cw, ch)
     small = img.resize((cols, rows), Image.LANCZOS)
+    small = ImageOps.autocontrast(small, cutoff=1)
     px = small.load()
     n = len(ASCII_RAMP) - 1
     lines = []
@@ -164,16 +196,18 @@ def render_ascii(img, cols: int = 82, cw: int = 7, ch: int = 12,
         for x in range(cols):
             a = _oval_alpha((x + 0.5) / cols, (y + 0.5) / rows)
             if a < 0.12:
-                spans.append('<tspan> </tspan>')
+                spans.append(" ")
                 continue
-            lum = _lum(px[x, y])
-            glyph = ASCII_RAMP[round(lum * n)]
-            col = _lerp(PANEL_BG, _grade(px[x, y], mode), a)
-            spans.append(f'<tspan fill="{_hex(col)}">{html.escape(glyph)}</tspan>')
-        lines.append(f'<text x="0" y="{(y+1)*ch}" xml:space="preserve" class="ascii-line">'
-                     f'{"".join(spans)}</text>')
-    w, h = cols * cw, rows * ch
-    inner = f'<g class="portrait ascii" filter="url(#pxGlow)">{"".join(lines)}</g>'
+            lum = _contrast(_lum(px[x, y]))
+            glyph = html.escape(ASCII_RAMP[round(lum * n)])
+            col = _lerp(PANEL_BG, _pixcolor(px[x, y], mode), a)
+            spans.append(f'<tspan fill="{_hex(col)}">{glyph}</tspan>')
+        lines.append(
+            f'<text x="0" y="{(y + 1) * ch:.1f}" font-size="{fs}" letter-spacing="{ls}" '
+            f'xml:space="preserve">{"".join(spans)}</text>'
+        )
+    w, h = round(cols * cw), round(rows * ch)
+    inner = f'<g class="portrait ascii" filter="url(#txtGlow)">{"".join(lines)}</g>'
     return inner, w, h
 
 
@@ -181,8 +215,8 @@ BRAILLE_BASE = 0x2800
 _DOTS = [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (0, 3), (1, 3)]
 
 
-def render_braille(img, cols: int = 56, cw: int = 8, ch: int = 13,
-                   mode: str = "neon") -> tuple[str, int, int]:
+def render_braille(img, cols: int = 58, cw: int = 8, ch: int = 13,
+                   mode: str = "mono_cyan") -> tuple[str, int, int]:
     rows = _rows(img, cols, cw, ch)
     gw, gh = cols * 2, rows * 4
     small = ImageOps.autocontrast(img.resize((gw, gh), Image.LANCZOS), cutoff=2)
@@ -193,14 +227,16 @@ def render_braille(img, cols: int = 56, cw: int = 8, ch: int = 13,
     for cy in range(rows):
         spans = []
         for cx in range(cols):
-            mask, acc = 0, 0.0
+            a = _oval_alpha((cx + 0.5) / cols, (cy + 0.5) / rows)
+            if a < 0.12:
+                spans.append('<tspan> </tspan>')
+                continue
+            mask = 0
             for bit, (dx, dy) in enumerate(_DOTS):
-                lum = _lum(px[cx*2+dx, cy*4+dy])
-                acc += lum
-                if lum > thr:
+                if _lum(px[cx*2+dx, cy*4+dy]) > thr:
                     mask |= (1 << bit)
             glyph = chr(BRAILLE_BASE + mask)
-            col = _grade(px[cx*2, cy*4], mode)
+            col = _lerp(PANEL_BG, _pixcolor(px[cx*2, cy*4], mode), a)
             spans.append(f'<tspan fill="{_hex(col)}">{html.escape(glyph)}</tspan>')
         lines.append(f'<text x="0" y="{(cy+1)*ch}" xml:space="preserve" class="braille-line">'
                      f'{"".join(spans)}</text>')

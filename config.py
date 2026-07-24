@@ -47,8 +47,8 @@ CONFIG = {
 
     # look and feel
     "theme": "cyberpunk",        # cyberpunk neon locked in
-    "portrait_style": "pixel",   # pixel | ascii | braille  (hero output)
-    "portrait_mode": "duotone",  # truecolor | neon | duotone
+    "portrait_style": "ascii",   # pixel | ascii | braille  (hero output)
+    "portrait_mode": "mono_white",  # truecolor | neon | duotone | mono_white | mono_cyan | mono_green | mono_amber
     "photo": "assets/photo.jpg",
 
     "title_tagline": "builder-operator // full-stack // researcher",
