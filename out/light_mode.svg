@@ -46,7 +46,7 @@
 <clipPath id="typ3"><rect x="598" y="133.0" width="0" height="22"><animate attributeName="width" from="0" to="521" begin="1.99s" dur="1.14s" fill="freeze"/></rect></clipPath>
 <g clip-path="url(#typ3)"><text x="598" y="144" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#c81e9e">Uptime </tspan><tspan fill="#c9bce8">....................... </tspan><tspan fill="#0085a8">7 years, 6 months, 23 days</tspan></text></g>
 <clipPath id="typ4"><rect x="598" y="155.0" width="0" height="22"><animate attributeName="width" from="0" to="440" begin="2.96s" dur="0.96s" fill="freeze"/></rect></clipPath>
-<g clip-path="url(#typ4)"><text x="598" y="166" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#c81e9e">Local </tspan><tspan fill="#c9bce8">........................ </tspan><tspan fill="#0085a8">14:32 IDT, Friday</tspan></text></g>
+<g clip-path="url(#typ4)"><text x="598" y="166" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#c81e9e">Local </tspan><tspan fill="#c9bce8">........................ </tspan><tspan fill="#0085a8">14:39 IDT, Friday</tspan></text></g>
 <clipPath id="typ5"><rect x="598" y="177.0" width="0" height="22"><animate attributeName="width" from="0" to="512" begin="3.78s" dur="1.12s" fill="freeze"/></rect></clipPath>
 <g clip-path="url(#typ5)"><text x="598" y="188" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#c81e9e">OS </tspan><tspan fill="#c9bce8">........................... </tspan><tspan fill="#0085a8">macOS Sequoia, Linux, iOS</tspan></text></g>
 <clipPath id="typ6"><rect x="598" y="199.0" width="0" height="22"><animate attributeName="width" from="0" to="314" begin="4.73s" dur="0.68s" fill="freeze"/></rect></clipPath>
@@ -91,15 +91,15 @@
 <g clip-path="url(#typ25)"><text x="598" y="628" xml:space="preserve" filter="url(#txtGlow)"></text></g>
 <clipPath id="typ26"><rect x="598" y="639.0" width="0" height="22"><animate attributeName="width" from="0" to="422" begin="20.25s" dur="0.92s" fill="freeze"/></rect></clipPath>
 <g clip-path="url(#typ26)"><text x="598" y="650" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#6a3ec8">GitHub Stats </tspan><tspan fill="#cabfe6">---------------------------------</tspan></text></g>
-<clipPath id="typ27"><rect x="598" y="661.0" width="0" height="22"><animate attributeName="width" from="0" to="467" begin="21.03s" dur="1.02s" fill="freeze"/></rect></clipPath>
-<g clip-path="url(#typ27)"><text x="598" y="672" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#c81e9e">Repos </tspan><tspan fill="#c9bce8">........................ </tspan><tspan fill="#0085a8">42  (Contributed 60)</tspan></text></g>
-<clipPath id="typ28"><rect x="598" y="683.0" width="0" height="22"><animate attributeName="width" from="0" to="332" begin="21.90s" dur="0.72s" fill="freeze"/></rect></clipPath>
-<g clip-path="url(#typ28)"><text x="598" y="694" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#c81e9e">Commits </tspan><tspan fill="#c9bce8">...................... </tspan><tspan fill="#0085a8">2,116</tspan></text></g>
-<clipPath id="typ29"><rect x="598" y="705.0" width="0" height="22"><animate attributeName="width" from="0" to="314" begin="22.51s" dur="0.68s" fill="freeze"/></rect></clipPath>
-<g clip-path="url(#typ29)"><text x="598" y="716" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#c81e9e">Stars </tspan><tspan fill="#c9bce8">........................ </tspan><tspan fill="#0085a8">128</tspan></text></g>
-<clipPath id="typ30"><rect x="598" y="727.0" width="0" height="22"><animate attributeName="width" from="0" to="314" begin="23.09s" dur="0.68s" fill="freeze"/></rect></clipPath>
-<g clip-path="url(#typ30)"><text x="598" y="738" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#c81e9e">Followers </tspan><tspan fill="#c9bce8">.................... </tspan><tspan fill="#0085a8">210</tspan></text></g>
-<clipPath id="typ31"><rect x="598" y="749.0" width="0" height="22"><animate attributeName="width" from="0" to="548" begin="23.67s" dur="1.20s" fill="freeze"/></rect></clipPath>
-<g clip-path="url(#typ31)"><text x="598" y="760" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#c81e9e">Lines of Code </tspan><tspan fill="#c9bce8">................ </tspan><tspan fill="#0085a8">446,276 (</tspan><tspan fill="#0f9d58">523,178++</tspan><tspan fill="#0085a8">, </tspan><tspan fill="#d23b57">76,902--</tspan><tspan fill="#0085a8">)</tspan></text></g>
-<text x="598" y="782" fill="#0a9a52" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="24.79s" dur="0.01s" fill="freeze"/>said@mit:~$ <tspan class="cursor" fill="#0085a8">&#9608;</tspan></text>
+<clipPath id="typ27"><rect x="598" y="661.0" width="0" height="22"><animate attributeName="width" from="0" to="458" begin="21.03s" dur="1.00s" fill="freeze"/></rect></clipPath>
+<g clip-path="url(#typ27)"><text x="598" y="672" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#c81e9e">Repos </tspan><tspan fill="#c9bce8">........................ </tspan><tspan fill="#0085a8">12  (Contributed 0)</tspan></text></g>
+<clipPath id="typ28"><rect x="598" y="683.0" width="0" height="22"><animate attributeName="width" from="0" to="314" begin="21.88s" dur="0.68s" fill="freeze"/></rect></clipPath>
+<g clip-path="url(#typ28)"><text x="598" y="694" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#c81e9e">Commits </tspan><tspan fill="#c9bce8">...................... </tspan><tspan fill="#0085a8">302</tspan></text></g>
+<clipPath id="typ29"><rect x="598" y="705.0" width="0" height="22"><animate attributeName="width" from="0" to="296" begin="22.46s" dur="0.64s" fill="freeze"/></rect></clipPath>
+<g clip-path="url(#typ29)"><text x="598" y="716" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#c81e9e">Stars </tspan><tspan fill="#c9bce8">........................ </tspan><tspan fill="#0085a8">3</tspan></text></g>
+<clipPath id="typ30"><rect x="598" y="727.0" width="0" height="22"><animate attributeName="width" from="0" to="296" begin="23.00s" dur="0.64s" fill="freeze"/></rect></clipPath>
+<g clip-path="url(#typ30)"><text x="598" y="738" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#c81e9e">Followers </tspan><tspan fill="#c9bce8">.................... </tspan><tspan fill="#0085a8">3</tspan></text></g>
+<clipPath id="typ31"><rect x="598" y="749.0" width="0" height="22"><animate attributeName="width" from="0" to="593" begin="23.55s" dur="1.30s" fill="freeze"/></rect></clipPath>
+<g clip-path="url(#typ31)"><text x="598" y="760" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#c81e9e">Lines of Code </tspan><tspan fill="#c9bce8">................ </tspan><tspan fill="#0085a8">2,271,755 (</tspan><tspan fill="#0f9d58">1,790,571++</tspan><tspan fill="#0085a8">, </tspan><tspan fill="#d23b57">481,184--</tspan><tspan fill="#0085a8">)</tspan></text></g>
+<text x="598" y="782" fill="#0a9a52" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="24.75s" dur="0.01s" fill="freeze"/>said@mit:~$ <tspan class="cursor" fill="#0085a8">&#9608;</tspan></text>
 </svg>
