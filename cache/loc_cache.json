@@ -46,5 +46,33 @@
   "az-said/MVP_RoofMate": {
     "a": 836,
     "d": 28
+  },
+  "az-said/ChatAI": {
+    "a": 399,
+    "d": 24
+  },
+  "az-said/meet-api-keys": {
+    "a": 1844,
+    "d": 0
+  },
+  "az-said/meet-plugins": {
+    "a": 12384,
+    "d": 1886
+  },
+  "az-said/meet-crowdfunding": {
+    "a": 77620,
+    "d": 6649
+  },
+  "az-said/peptide-visual-lab-mobile": {
+    "a": 23811,
+    "d": 150
+  },
+  "az-said/peptide-scope": {
+    "a": 0,
+    "d": 0
+  },
+  "az-said/MVP_startupGroup": {
+    "a": 689,
+    "d": 2
   }
 }
