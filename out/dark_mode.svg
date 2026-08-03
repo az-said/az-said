@@ -44,9 +44,9 @@
 <clipPath id="typ2"><rect x="598" y="111.0" width="0" height="22"><animate attributeName="width" from="0" to="17" begin="1.78s" dur="0.25s" fill="freeze"/></rect></clipPath>
 <g clip-path="url(#typ2)"><text x="598" y="122" xml:space="preserve" filter="url(#txtGlow)"></text></g>
 <clipPath id="typ3"><rect x="598" y="133.0" width="0" height="22"><animate attributeName="width" from="0" to="512" begin="1.99s" dur="1.12s" fill="freeze"/></rect></clipPath>
-<g clip-path="url(#typ3)"><text x="598" y="144" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#ff2bd6">Uptime </tspan><tspan fill="#43356b">....................... </tspan><tspan fill="#00eaff">7 years, 7 months, 1 days</tspan></text></g>
+<g clip-path="url(#typ3)"><text x="598" y="144" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#ff2bd6">Uptime </tspan><tspan fill="#43356b">....................... </tspan><tspan fill="#00eaff">7 years, 7 months, 2 days</tspan></text></g>
 <clipPath id="typ4"><rect x="598" y="155.0" width="0" height="22"><animate attributeName="width" from="0" to="440" begin="2.94s" dur="0.96s" fill="freeze"/></rect></clipPath>
-<g clip-path="url(#typ4)"><text x="598" y="166" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#ff2bd6">Local </tspan><tspan fill="#43356b">........................ </tspan><tspan fill="#00eaff">09:14 IDT, Sunday</tspan></text></g>
+<g clip-path="url(#typ4)"><text x="598" y="166" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#ff2bd6">Local </tspan><tspan fill="#43356b">........................ </tspan><tspan fill="#00eaff">09:39 IDT, Monday</tspan></text></g>
 <clipPath id="typ5"><rect x="598" y="177.0" width="0" height="22"><animate attributeName="width" from="0" to="512" begin="3.76s" dur="1.12s" fill="freeze"/></rect></clipPath>
 <g clip-path="url(#typ5)"><text x="598" y="188" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#ff2bd6">OS </tspan><tspan fill="#43356b">........................... </tspan><tspan fill="#00eaff">macOS Sequoia, Linux, iOS</tspan></text></g>
 <clipPath id="typ6"><rect x="598" y="199.0" width="0" height="22"><animate attributeName="width" from="0" to="314" begin="4.71s" dur="0.68s" fill="freeze"/></rect></clipPath>
@@ -94,7 +94,7 @@
 <clipPath id="typ27"><rect x="598" y="661.0" width="0" height="22"><animate attributeName="width" from="0" to="458" begin="21.01s" dur="1.00s" fill="freeze"/></rect></clipPath>
 <g clip-path="url(#typ27)"><text x="598" y="672" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#ff2bd6">Repos </tspan><tspan fill="#43356b">........................ </tspan><tspan fill="#00eaff">19  (Contributed 0)</tspan></text></g>
 <clipPath id="typ28"><rect x="598" y="683.0" width="0" height="22"><animate attributeName="width" from="0" to="314" begin="21.86s" dur="0.68s" fill="freeze"/></rect></clipPath>
-<g clip-path="url(#typ28)"><text x="598" y="694" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#ff2bd6">Commits </tspan><tspan fill="#43356b">...................... </tspan><tspan fill="#00eaff">312</tspan></text></g>
+<g clip-path="url(#typ28)"><text x="598" y="694" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#ff2bd6">Commits </tspan><tspan fill="#43356b">...................... </tspan><tspan fill="#00eaff">313</tspan></text></g>
 <clipPath id="typ29"><rect x="598" y="705.0" width="0" height="22"><animate attributeName="width" from="0" to="296" begin="22.44s" dur="0.64s" fill="freeze"/></rect></clipPath>
 <g clip-path="url(#typ29)"><text x="598" y="716" xml:space="preserve" filter="url(#txtGlow)"><tspan fill="#ff2bd6">Stars </tspan><tspan fill="#43356b">........................ </tspan><tspan fill="#00eaff">4</tspan></text></g>
 <clipPath id="typ30"><rect x="598" y="727.0" width="0" height="22"><animate attributeName="width" from="0" to="296" begin="22.99s" dur="0.64s" fill="freeze"/></rect></clipPath>
