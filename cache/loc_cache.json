@@ -78,5 +78,13 @@
   "az-said/Interlock": {
     "a": 3110,
     "d": 900
+  },
+  "az-said/clara-gateway": {
+    "a": 61891,
+    "d": 1
+  },
+  "az-said/study-buddy": {
+    "a": 17345,
+    "d": 1230
   }
 }
